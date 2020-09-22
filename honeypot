@@ -1,0 +1,6 @@
+#!/bin/bash  
+procnum=`ps -ef | grep "HFish"| grep -v grep | wc -l`  
+
+if [ $procnum -eq 0 ]; then  
+   cd HFish-0.6.2-linux-amd64 && nohup ./HFish run >> /opt/output.log 2>&1 &
+fi
